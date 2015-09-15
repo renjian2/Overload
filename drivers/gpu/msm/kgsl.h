@@ -337,8 +337,6 @@ void kgsl_get_egl_counts(struct kgsl_mem_entry *entry,
 struct kgsl_mem_entry * __must_check
 kgsl_sharedmem_find_id(struct kgsl_process_private *process, unsigned int id);
 
-void kgsl_get_memory_usage(char *str, size_t len, uint64_t memflags);
-
 extern const struct dev_pm_ops kgsl_pm_ops;
 
 int kgsl_suspend_driver(struct platform_device *pdev, pm_message_t state);
