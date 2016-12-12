@@ -5078,6 +5078,7 @@ static int fg_batt_profile_init(struct fg_chip *chip)
 	const char *data, *batt_type_str, *old_batt_type;
 	bool tried_again = false, vbat_in_range, profiles_same;
 	u8 reg = 0;
+	old_batt_type = default_batt_type;
 
 wait:
 	fg_stay_awake(&chip->profile_wakeup_source);
@@ -5104,6 +5105,7 @@ wait:
 	profile_node = of_batterydata_get_best_profile(batt_node, "bms",
 							fg_batt_type);
 	if (!profile_node) {
+<<<<<<< HEAD
 		pr_err("couldn't find profile handle ,reload battery profile\n");
 		schedule_work(&chip->sysfs_restart_work);
 		cancel_delayed_work(&chip->update_sram_data);
@@ -5117,6 +5119,11 @@ wait:
 			rc = -ENODATA;
 			goto fail;
 		}
+=======
+		pr_err("couldn't find profile handle\n");
+		rc = -ENODATA;
+		goto fail;
+>>>>>>> 91a01a9aeefa... ANDROID: fix uninitilized variable
 	}
 
 	/* read rslow compensation values if they're available */
