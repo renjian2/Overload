@@ -101,11 +101,8 @@ if BLOCK
 menu "DOS/FAT/NT Filesystems"
 
 source "fs/fat/Kconfig"
-<<<<<<< HEAD
 source "fs/exfat/Kconfig"
-=======
 source "fs/sdfat/Kconfig"
->>>>>>> 2bb88cfddb9753e6658147ea54ac05bbf948e645
 source "fs/ntfs/Kconfig"
 
 endmenu
