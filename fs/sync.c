@@ -358,7 +358,7 @@ SYSCALL_DEFINE4(sync_file_range, int, fd, loff_t, offset, loff_t, nbytes,
 #ifdef CONFIG_DYNAMIC_FSYNC
 	if (dyn_fsync_active && suspend_active)
 		return 0;
-#endi
+#endif
 
         if (!fsync_enabled)
 		return 0;

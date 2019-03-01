@@ -118,7 +118,7 @@ vr_add_request(struct request_queue *q, struct request *rq)
 	vr_add_rq_rb(vd, rq);
 
 	if (vd->fifo_expire[dir]) {
-		rq->fifo_time = jiffies + vd->fifo_expire[dir];
+                rq->fifo_time = jiffies + vd->fifo_expire[dir];
 		list_add_tail(&rq->queuelist, &vd->fifo_list[dir]);
 	}
 }
